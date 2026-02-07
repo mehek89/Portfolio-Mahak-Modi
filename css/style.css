@@ -453,3 +453,37 @@ html {
     background: #0d6efd;
     color: #fff;
 }
+
+/* Ensure the QR image is clear and prominent */
+.qr-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px; /* Creates the necessary "quiet zone" for scanners */
+    background: white;
+    z-index: 1;
+    position: relative;
+}
+
+/* Make the scanner line less intrusive so it doesn't break the link */
+.scanner-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 0, 0, 0.6); /* Added transparency */
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+    left: 0;
+    z-index: 3; /* Keeps it above the image but slightly see-through */
+    animation: scanMove 2.5s linear infinite;
+}
+
+/* Adjust the box size slightly for better mobile focus */
+.qr-scanner-box {
+    width: 200px;  /* Increased slightly */
+    height: 200px; 
+    background: #ffffff;
+    border: 2px solid #0d6efd;
+    border-radius: 12px;
+    padding: 15px;
+}
