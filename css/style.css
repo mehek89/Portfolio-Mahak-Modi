@@ -1,0 +1,455 @@
+/* Basic body styling */
+body {
+    font-family: 'Arial', sans-serif; /* Choose a professional font */
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Custom styles for sections */
+#hero {
+    background: #e9eaea; /* Light background for the hero */
+}
+
+#projects .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+#projects .card:hover {
+    transform: translateY(-5px);
+}
+
+/* Link styling */
+a {
+    color: #007bff; /* Bootstrap's primary blue */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Ensure images within cards are responsive and clean */
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+}
+
+/* Optional: Smooth scrolling for navigation links */
+html {
+    scroll-behavior: smooth;
+}
+/* Typography */
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #212529;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #0d6efd; /* Bootstrap Primary Blue */
+}
+
+.hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    color: #6c757d;
+    max-width: 500px;
+}
+
+/* Typography - Font styling for impact */
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem; /* Larger for more attraction */
+    font-weight: 900;
+    color: #212529;
+}
+
+/* Hero Section Container */
+#hero {
+    min-height: 80vh; /* Ensures the section fills the screen */
+    display: flex;
+    align-items: center;
+}
+
+/* The Profile Container - Massive Height */
+/* Container for the profile photo */
+/* Container for the profile photo */
+.profile-hover-box {
+    width: 100%;
+    max-width: 560px;   
+    height: 625px;      /* Slightly increased for the perfect balance */
+    overflow: hidden;
+    border-radius: 40px; /* Slightly more rounded to match the larger scale */
+    box-shadow: 0 40px 80px rgba(0,0,0,0.18);
+    background-color: #000; 
+}
+
+.profile-img-hover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   
+    
+    /* Initial state: Very Light / Faded */
+    opacity: 0.4;       
+    transform: scale(1);
+    
+    /* Premium smooth transition */
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover/Touch State */
+.profile-hover-box:hover .profile-img-hover {
+    opacity: 1;          /* Original colors pop through */
+    transform: scale(1.12); /* Elegant Zoom */
+}
+
+/* Ensure the hero section doesn't feel cramped with the new height */
+#hero {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+/* Adjusting the Title for the new scale */
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 5.5rem; /* Large and bold */
+    line-height: 1.1;  /* Keeps the text tight but readable */
+    font-weight: 900;
+}
+
+/* Responsive: Shrink height for tablets/phones */
+@media (max-width: 992px) {
+    .profile-hover-box {
+        height: 450px;
+    }
+    .hero-title {
+        font-size: 3.5rem;
+    }
+}
+/* Container for the Flip Effect */
+.flip-card {
+    width: 100%;
+    max-width: 500px;
+    height: 625px;
+    perspective: 1500px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+/* JavaScript will add this class on double click */
+.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+.flip-card-front {
+    background-color: #000;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4; /* Start Light */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* JavaScript will add this class on single click */
+.is-active img {
+    opacity: 1 !important;
+    transform: scale(1.05); /* Zoom in on single click */
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.flip-card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Social Icons Styling */
+.social-icons a {
+    font-size: 2rem;
+    color: #495057;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #0d6efd; /* Changes to blue on hover */
+    transform: translateY(-5px);
+}
+
+/* Resume Button Styling */
+.btn-lg-resume {
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 2px solid #212529;
+    transition: all 0.3s ease;
+}
+
+.btn-lg-resume:hover {
+    background-color: #212529;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Gap helper if your Bootstrap version is older */
+.gap-4 { gap: 1.5rem; }
+.gap-3 { gap: 1rem; }
+/* Header styling */
+.about-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #212529;
+}
+
+/* Elegant Text Styling */
+.elegant-bio {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;      /* Larger for readability */
+    line-height: 2;         /* Luxurious spacing */
+    color: #555;            /* Softer grey for modern look */
+    font-weight: 300;       /* Lighter weight looks more sophisticated */
+    max-width: 850px;
+}
+
+/* Accent for the Job Title */
+.text-accent {
+    color: #0d6efd;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(13, 110, 253, 0.2);
+}
+
+/* Reveal Animation */
+.reveal-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Bio Container Alignment */
+.bio-container {
+    min-height: 200px; /* Prevents layout jump while typing */
+}
+
+/* 3D Sphere Adjustments */
+.sphere-card {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset -10px -10px 30px rgba(0,0,0,0.4), 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* The Main Square Container */
+.qr-scanner-box {
+    width: 180px;  /* Fixed width */
+    height: 180px; /* Fixed height to make it a square */
+    background: #ffffff;
+    border: 2px solid #0d6efd; /* Blue border to match your theme */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(13, 110, 253, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.qr-scanner-box:hover {
+    transform: scale(1.05);
+}
+
+/* The QR Frame inside the square */
+.qr-frame {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-image {
+    width: 100%;
+    height: 100%;
+}
+
+/* Scanner Line Animation */
+.scanner-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #ff0000;
+    box-shadow: 0 0 10px #ff0000;
+    left: 0;
+    animation: scanMove 2.5s linear infinite;
+    z-index: 2;
+}
+
+@keyframes scanMove {
+    0%, 100% { top: 0%; }
+    50% { top: 100%; }
+}
+
+/* Text at the bottom of the square */
+.qr-text-bottom p {
+    margin: 8px 0 0 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #0d6efd;
+}
+
+/* 3D Corner Decorators (Optional but adds 'Software Dev' vibe) */
+.corner {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #0d6efd;
+    z-index: 3;
+}
+.tl { top: 0; left: 0; border-right: none; border-bottom: none; }
+.tr { top: 0; right: 0; border-left: none; border-bottom: none; }
+.bl { bottom: 0; left: 0; border-right: none; border-top: none; }
+.br { bottom: 0; right: 0; border-left: none; border-top: none; }
+
+/* Floating & Scanning Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+.floating-anim { animation: float 4s ease-in-out infinite; }
+
+@keyframes scanMove {
+    0%, 100% { top: 0%; }
+    50% { top: 100%; }
+}
+.scanner-line {
+    position: absolute;
+    width: 100%; height: 2px;
+    background: #ff0000;
+    box-shadow: 0 0 5px #ff0000;
+    animation: scanMove 2s linear infinite;
+}
+.elegant-bio {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.9;
+    color: #444;
+    font-weight: 300;
+    display: inline;
+}
+
+/* The Cursor matches your blue theme */
+.typing-cursor {
+    font-size: 1.4rem;
+    color: #0d6efd;
+    font-weight: bold;
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .elegant-bio {
+        font-size: 1.1rem;
+    }
+}
+
+/* Certification Card Styling */
+.cert-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    border-color: #0d6efd;
+    box-shadow: 0 10px 25px rgba(13, 110, 253, 0.1);
+}
+
+.cert-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.cert-info h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 700;
+    color: #212529;
+}
+
+.cert-info .issuer {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin: 4px 0 12px 0;
+}
+
+.btn-verify {
+    font-size: 0.8rem;
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid #0d6efd;
+    padding: 5px 12px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.btn-verify:hover {
+    background: #0d6efd;
+    color: #fff;
+}
